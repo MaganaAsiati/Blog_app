@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
-
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
+  has_many :likes
+  has_many :comments
   # validations
 
   validates :Title, presence: true, length: { maximum: 250 }
@@ -11,11 +12,10 @@ class Post < ApplicationRecord
     comments.limit(5).order(created_at: :desc)
   end
 
-  after_save :updates_posts_counter
+ 
+  after_save :update_post_counter
 
-  private
-
-  def updates_posts_counter
-    posts.increment!(:Posts_Counter)
+  def update_post_counter
+    author.increment(:Posts_Counter)
   end
 end
