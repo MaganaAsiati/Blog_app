@@ -13,3 +13,11 @@ Post.create(author_id: 1, Title: 'Hello', Text: 'This my second post')
 Post.create(author_id: 1, Title: 'Hello', Text: 'This my third post')
 Post.create(author_id: 1, Title: 'Hello', Text: 'This my fourth post')
 
+Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!' )
+Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!' )
+Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!' )
+Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!' )
+Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!' )
+Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!' )
+Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!' )
+
