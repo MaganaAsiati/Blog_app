@@ -8,3 +8,8 @@
 User.create(Name: 'Tom', Photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Teacher from Mexico.')
 User.create(Name: 'Lilly', Photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Teacher from Poland.')
 
+Post.create(author_id: 1, Title: 'Hello', Text: 'This my first post')
+Post.create(author_id: 1, Title: 'Hello', Text: 'This my second post')
+Post.create(author_id: 1, Title: 'Hello', Text: 'This my third post')
+Post.create(author_id: 1, Title: 'Hello', Text: 'This my fourth post')
+
