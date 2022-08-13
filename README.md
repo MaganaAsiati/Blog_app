@@ -1,24 +1,61 @@
-# README
+# ![](https://img.shields.io/badge/Microverse-blueviolet) Blog-App
+> **The Blog is a classic example of a blog website. The goal is to create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+- Ruby on Rails
+- Ruby
 
-* Ruby version
+### Prerequisites
 
-* System dependencies
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Rails & Postgres](https://www.howtoforge.com/tutorial/ubuntu-ruby-on-rails/?fbclid=IwAR3G0lCOxctwwOCAXmJKAma8p-IciYv2qwwRUyOX-pULaB_7lmrGgMMK8G4)
 
-* Configuration
+## Install
 
-* Database creation
+- Ruby
+- Ruby on Rails(as a gem)
+- Postgresql database
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy of the app, run the following commands in your terminal:
+- `git clone https://github.com/MaganaAsiati/Blog_app.git`
+- `cd /Blog_app.git`
+- `bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the following commands to run the app
 
-* Deployment instructions
+- `rails db:create`
+- `rails db:migrate`
+- `rails s`
 
-* ...
+In your browser, go to
+
+- `http://localhost:3000`
+
+## Testing
+- To install rspec: gem install rspec
+- To run all the tests: rspec ./spec
+
+
+## Authors
+
+👤 **Magana Mwinja Asiati**
+
+- GitHub: [@MaganaAsiati ](https://github.com/MaganaAsiati)
+- Twitter: [@asia_magana](https://twitter.com/asia_magana)
+- LinkedIn: [Asia Magana](https://www.linkedin.com/in/asia-magana-60b451200/)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/aimalamiri/Ruby-Catalog/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed. 
