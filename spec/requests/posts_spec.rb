@@ -18,4 +18,11 @@ RSpec.describe Post, type: :request do
     end
   end
 
-  
+  describe 'GET #show' do
+  before(:example) {get '/posts/show'}
+    it 'should be a success' do
+   
+      expect(response).to have_http_status(:ok)
+    end
+
+   
