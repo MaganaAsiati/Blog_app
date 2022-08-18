@@ -29,5 +29,8 @@ RSpec.describe Post, type: :request do
       expect(response).to render_template('show')
     end
 
-    
+    it 'should have the corresponding placeholder' do
+      expect(response.body).to include('Here is a the post you are looking for')
+    end
+  end
 end
