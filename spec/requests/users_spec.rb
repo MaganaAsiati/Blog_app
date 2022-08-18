@@ -28,4 +28,8 @@ RSpec.describe User, type: :request do
       expect(response).to render_template('show')
     end
 
+    it 'should have the corresponding placeholder' do
+      expect(response.body).to include('Here is the user you are looking for')
+    end
+  end
 end
