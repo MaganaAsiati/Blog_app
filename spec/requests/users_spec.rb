@@ -1,17 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
-  describe 'GET /index' do
-    it 'returns http success' do
-      get '/users/index'
-      expect(response).to have_http_status(:success)
-    end
-  end
+RSpec.describe User, type: :request do
+  describe 'GET #index' do
+    before(:example) { get '/users/index' }
 
-  describe 'GET /show' do
-    it 'returns http success' do
-      get '/users/show'
-      expect(response).to have_http_status(:success)
+    it 'should be a success' do
+      expect(response).to have_http_status(:ok)
     end
-  end
-end
+
+    it 'should render \'index\' template' do
+      expect(response).to render_template('index')
+    end
+
+   
