@@ -12,4 +12,10 @@ RSpec.describe Post, type: :request do
       expect(response).to render_template('index')
     end
 
-    
+    it 'should have the corresponding placeholder' do
+      
+      expect(response.body).to include('Here is a list of all posts from that user')
+    end
+  end
+
+  
