@@ -1,0 +1,13 @@
+<article class="post-snipet">
+    <h3><%= @post.Title %>  by <%= @post.author.Name %></h3>
+    <div class="post-stats">
+      <span>Comments <%= @post.Comments_Counter %> &nbsp;,&nbsp;</span>
+      <span>Likes <%= @post.Likes_Counter %></span>
+    </div>
+    <p><%= @post.Text %></p>
+  </article>
+  <ul class="comments">
+    <% @post.recent_comments.each do |comment| %>
+      <li><%= comment.author.Name %>: <%= comment.text %>
+    <% end %>
+  </ul> 
