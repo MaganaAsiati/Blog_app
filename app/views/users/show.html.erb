@@ -1,7 +1,7 @@
 <%= render partial: 'partials/user', locals: { user: @user }%>
 <div class='bio'>
   <b>Bio</b>
-  <p><%= @user.bio %></p>
+  <p><%= @user.Bio %></p>
 </div>
 <% @recent_posts.each do |post| %>
   <%= render partial: 'partials/post', locals: { post: post} %>
