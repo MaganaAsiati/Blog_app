@@ -1,9 +1,4 @@
-<ul>
-  <% @user.each do  |user| %>
-    
-    <li> <%= user.Name %> </li>
-    <li> <%= user.Bio %> </li>
+<% @users.each do |user| %>
+  <%= render partial: 'partials/user', locals: { user: user } %>
   <% end %>
- 
-  </ul>
-<div>Here is a list of all users</div>
+  Footer
