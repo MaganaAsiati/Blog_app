@@ -13,7 +13,7 @@
     <%= f.submit "Like", class:'btn', disable_with: 'updating likes...' %>
   <% end %>
   <ul class="comments">
-    <% @post.recent_comments.each do |comment| %>
+    <% @post.recent_comments.includes(:author).each do |comment| %>
       <li><%= comment.author.Name %>: <%= comment.text %>
     <% end %>
   </ul> 
