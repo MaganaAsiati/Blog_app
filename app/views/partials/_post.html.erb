@@ -1,0 +1,8 @@
+<article class="post-snipet">
+    <h3><%= link_to(post.Title, user_post_path(id: post.id, user_id: post.author_id)) %></h3>
+    <p><%= truncate(post.Text, length: 125) ... %></p>
+    <div class="post-stats">
+      <span>Comments <%= post.Comments_Counter %> &nbsp;,&nbsp;</span>
+      <span>Likes <%= post.Likes_Counter %></span>
+    </div>
+  </article> 
