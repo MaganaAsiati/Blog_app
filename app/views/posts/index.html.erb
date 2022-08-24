@@ -2,7 +2,7 @@
 <%  @user_posts.each do |post| %>
     <%= render partial: 'partials/post', locals: { post: post} %>
       <ul class="comments">
-      <% post.recent_comments.each do |comment| %>
+      <% post.recent_comments.includes(:author).each do |comment| %>
         <li><%= comment.author.Name %>: <%= comment.text %>
       <% end %>
       </ul>
