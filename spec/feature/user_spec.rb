@@ -37,7 +37,43 @@ RSpec.describe 'Testing user index page', type: :feature do
         end 
         
         
-       
+        feature 'User show page' do
+          background { visit user_path(@first_user.id) }
+    
+          scenario 'See profile picture for each user' do
+            page.has_selector?('img')
+          end
+    
+          scenario 'I can see the user\'s username' do
+            expect(page).to have_content('John')
+          end
+    
+          scenario 'I can see the user\'s bio' do
+            expect(page).to have_content('Developer.')
+          end
+    
+          scenario 'I can see the user\'s first 3 posts' do
+            expect(page).to have_content('post title')
+          end
+    
+          scenario 'I can see a button that lets me view all of a user\'s posts' do
+            expect(page).to have_content('see all posts')
+          end
+    
+          scenario 'I can see the number of posts the user has written' do
+            visit '/'
+            expect(page).to have_content("Number of posts: #{@first_user.Posts_Counter}")
+          end
+    
+          scenario 'When I click a user\'s post, it redirects me to that post\'s show page.' do
+            click_link 'post title'
+            expect(current_path).to eq user_post_path(@first_user.id, Post.first.id)
+          end
+    
+          scenario 'redirects to the user\'s post\'s index page when you click on a see all posts' do
+            click_link 'see all posts'
+            expect(current_path).to eq user_posts_path(@first_user.id)
+          end
         end
       end  
       
