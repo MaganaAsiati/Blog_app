@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,controllers: {
+                 sessions: 'users/sessions',
+                 registrations: 'users/registrations'
+             }
   get 'comments/new'
   get 'comments/create'
   get 'likes/create'
@@ -15,4 +18,23 @@ Rails.application.routes.draw do
     resources :likes, only: [:create ]
   end 
 end
+# namespace :api, defaults: { format: :json } do
+#   namespace :v1 do
+#   resources :users, only: [:index] do 
+#     resources :posts, only: [:index] do
+#       resources :comments, only: [:index] 
+#      end
+#     end
+#   end
+#   end
+
+namespace :api do 
+  namespace :v1 do 
+    resources :users, only: %i[index] do 
+      resources :posts, only: %i[index show] do 
+        resources :comments, only: %i[index new create ] 
+      end 
+    end 
+  end 
 end 
+end
