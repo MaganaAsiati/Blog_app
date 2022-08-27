@@ -5,4 +5,4 @@ class Api::V1::UsersController < ApplicationController
 
     render json: @users, status: :ok
   end
-end 
+end
