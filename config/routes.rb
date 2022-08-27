@@ -30,7 +30,7 @@ end
 
 namespace :api do 
   namespace :v1 do 
-    resources :users, only: %i[index] do 
+    resources :users, only: %i[create index] do 
       resources :posts, only: %i[index show] do 
         resources :comments, only: %i[index new create ] 
       end 
