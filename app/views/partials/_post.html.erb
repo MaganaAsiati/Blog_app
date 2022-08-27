@@ -2,7 +2,10 @@
     <h3><%= link_to(post.Title, user_post_path(id: post.id, user_id: post.author_id)) %></h3>
     <p><%= truncate(post.Text, length: 125) ... %></p>
     <div class="post-stats">
-      <span>Comments <%= post.Comments_Counter %> &nbsp;,&nbsp;</span>
-      <span>Likes <%= post.Likes_Counter %></span>
+      <span>Comments <%= post.comments.count %> &nbsp;,&nbsp;</span>
+      <span>Likes <%= post.likes.count %></span>
+      <% if can? :destroy, post %>
+      <div><%= button_to 'Delete', user_post_path(@user.id, post.id), method: :delete %></div>
+  <% end %>
     </div>
   </article> 
