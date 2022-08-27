@@ -1,4 +1,3 @@
-
 # before_action :set_post, only: [:index, :show, :destroy]
 
 class PostsController < ApplicationController
@@ -14,12 +13,12 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @like = Like.new
   end
-  
+
   def destroy
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     puts 'Yes I can destroy'
-    @post.destroy 
+    @post.destroy
     redirect_to user_post_path(@user.id, @post.id)
   end
 
