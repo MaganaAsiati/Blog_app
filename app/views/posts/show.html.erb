@@ -1,0 +1,30 @@
+<article class="post-snipet">
+    
+    <h3><%= @post.Title %>  by <%= link_to @post.author.Name, user_path(@post.author_id) %></h3>
+    <div class="post-stats">
+      <span>Comments <%= @post.Comments_Counter %> &nbsp;,&nbsp;</span>
+      <span>Likes <%= @post.Likes_Counter %></span>
+    </div>
+    <p><%= @post.Text %></p>
+  </article>
+  <%= form_for @like, url: user_post_likes_path(@user.id, @post.id) do |f|%>
+    <%= f.hidden_field :author_id, value: @post.author.id %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.submit "Like", class:'btn', disable_with: 'updating likes...' %>
+  <% end %>
+  <ul class="comments">
+    <% @post.recent_comments.includes(:author).each do |comment| %>
+      <li><%= comment.author.Name %>: <%= comment.text %>
+      <% if can? :destroy, comment %>
+      <div><%= button_to 'Delete', user_post_comment_path(@user.id, @post.id, comment.id), method: :delete %></div>
+  <% end %>
+    <% end %>
+    
+  </ul> 
+  <h4> ADD COMMENT </h4>
+  <%= form_for @comment, url: user_post_comments_path(@user.id, @post.id) do |f| %>
+    <%= f.hidden_field :author_id, value: @post.author.id %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.text_area :text, placeholder:'What are your thoughts on this post?' %><br />
+    <%= f.submit "Submit comment", class:"btn see-all-btn", disable_with: 'Submiting Comment...' %>
+  <% end %>
