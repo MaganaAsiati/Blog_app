@@ -1,4 +1,4 @@
-<%= form_for @post, url: user_posts_path do |f| %>
+<%= form_for @post, url: user_posts_path(@user.id) do |f| %>
   <h2>CREATE A NEW POST</h2>
     <% if @post.errors.any? %>
       <ul class="errors">
